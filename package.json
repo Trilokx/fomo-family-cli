@@ -1,0 +1,45 @@
+{
+  "name": "trlx-fomo",
+  "version": "0.2.0-beta.1",
+  "private": true,
+  "type": "module",
+  "description": "Bounded browser tools for Fomo, shared by CLI and MCP",
+  "bin": {
+    "fomo": "bin/fomo.mjs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "test": "node --test test/*.test.mjs",
+    "fomo": "node bin/fomo.mjs",
+    "prepare": "npm run build",
+    "test:live": "node scripts/live-check.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "playwright": "1.63.0",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "26.4.1",
+    "typescript": "7.0.2"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "skills/",
+    "docs/",
+    "README.md",
+    "LICENSE",
+    ".codex-plugin/",
+    ".mcp.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trilokx/fomo-cli.git"
+  },
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,15 @@
+node_modules/
+*.tgz
+.state/
+test-results/
+dist/
+.env*
+browser/
+evidence/
+charts/
+seen/
+runtime.*
+*.log
+scripts/research-traders.mjs
+scripts/watchlist-review.mjs
+scripts/export-research.mjs

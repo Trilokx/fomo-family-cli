@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "fomo": {
+      "command": "fomo",
+      "args": [
+        "mcp"
+      ]
+    }
+  }
+}

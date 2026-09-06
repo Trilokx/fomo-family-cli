@@ -1,0 +1,19 @@
+{
+  "name": "fomo",
+  "version": "0.2.0-beta.1",
+  "description": "Local Fomo research tools using deterministic browser workflows and bounded JSON.",
+  "author": {
+    "name": "TRLX"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Fomo",
+    "shortDescription": "Use Fomo in Codex.",
+    "longDescription": "Discover tokens and read holders, theses, alerts and leaderboards through a local Chrome session. Collection uses no model calls.",
+    "developerName": "TRLX",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Help me use Fomo."
+  },
+  "mcpServers": "./.mcp.json"
+}
