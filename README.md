@@ -1,81 +1,135 @@
-# Fomo CLI
+<p align="center">
+  <img src="assets/fomo-family-cli-banner.png" alt="FOMO.family CLI — Your FOMO research. Ready for your AI. A Fomo-inspired wordmark beside a terminal showing watchlists, trending tokens, holders and theses." width="100%">
+</p>
 
-Deterministic browser tools for researching Fomo through **CLI or MCP**. One command performs many browser actions and returns bounded JSON. The collector makes **zero LLM calls**; the caller chooses the model, interpretation and report format.
+<h1 align="center">FOMO.family CLI</h1>
 
-**Private beta, 0.2.0-beta.1.** Independent project, not affiliated with Fomo. This is a browser adapter, not an official API. See [verified coverage](docs/coverage.md).
+<p align="center"><strong>Give your AI the context behind the coins.</strong></p>
 
-## Install
+<p align="center">Explore what is gaining attention, who holds it, and why they believe in it.<br>Turn your FOMO.family research into a workflow your AI can repeat.</p>
 
-Requires Node.js 22+, npm, Google Chrome, a desktop session and your own Fomo account. No model API key is needed.
+<p align="center"><strong>CLI + MCP</strong> · <strong>Your browser session</strong> · <strong>Your choice of AI</strong> · <strong>Beta</strong></p>
+
+<p align="center">
+  <a href="#quick-start">Get started</a> ·
+  <a href="#connect-your-ai">Connect your AI</a> ·
+  <a href="docs/commands.md">Command guide</a> ·
+  <a href="docs/coverage.md">Verified coverage</a>
+</p>
+
+## From a busy feed to a focused research brief
+
+The interesting part of a coin is rarely just its price. It is the traders building positions, the thesis behind their conviction, and the change in attention around it. Following all of that means moving between lists, filters, profiles and charts.
+
+**FOMO.family CLI gives your AI a repeatable way to do that work.** It operates [FOMO.family](https://fomo.family) through your own logged-in browser and brings back a focused set of observations. Your AI can turn those observations into a brief, explore a promising lead, or help maintain your watchlist.
+
+You choose the model and the final format. The toolkit handles the browser steps.
+
+## What you can do
+
+| Your question | What the toolkit brings back |
+| --- | --- |
+| **Where is attention moving?** | Watchlist, Trending and Most held discovery, plus Crypto, Graduated and Bonding views. |
+| **Who is involved?** | Holders, followed traders, displayed positions and leaderboard context. |
+| **What is the story?** | Theses filtered by Fomo's native minimum size, with position details for selected authors. |
+| **What changed since my last read?** | Newly observed thesis text, with previously seen content filtered out. |
+| **What deserves a closer look?** | Chart snapshots, timeframe controls and trader overlays for your AI or your own review. |
+| **What do I want to keep following?** | Explicit watchlist additions and removals, verified after reloading. |
+
+## One command. A repeatable starting point.
 
 ```sh
-gh repo clone Trilokx/fomo-cli
-cd fomo-cli
+fomo daily --limit 3 --rows 5 --min-size-usd 10000
+```
+
+This combines Watchlist, Trending and Most held, prioritizes overlap, and examines up to three candidates. For each, it collects an overview, Friends-only holders and a small sample of filtered theses. Your AI receives structured context with sources, timestamps and coverage limits.
+
+Then ask your connected AI:
+
+> Run my FOMO.family research. Show me which coins deserve attention, which traders I follow are involved, and the thesis and counterargument for each. Keep it short and tell me what is still uncertain.
+
+The command collects the evidence; **your AI writes the brief**. The workflow does not place trades or automatically edit your watchlist.
+
+### Read the relevant theses, not the entire history
+
+A coin can have thousands of theses. Start with a native minimum-size filter, read a limited sample, and open the position details for the authors that merit attention. On the next run, `--since-last` avoids sending unchanged observed thesis text again.
+
+This is selective research, not a complete historical archive. A displayed position value is also not proof of a fresh purchase for that amount. [How filters and evidence work →](docs/research.md)
+
+## Quick start
+
+You need **Node.js 22+**, **Google Chrome**, Git and a FOMO.family account. Windows and macOS are the intended browser environments. Use a terminal with access to this repository.
+
+**1. Install the toolkit**
+
+```sh
+git clone https://github.com/Trilokx/fomo-family-cli.git
+cd fomo-family-cli
 npm ci
-npm test
 npm install --global .
+```
+
+**2. Connect your FOMO.family account**
+
+```sh
 fomo login
 ```
 
-Sign in manually in the dedicated normal Chrome window, then close only that window. Continue:
+Sign in in the dedicated Chrome window, then close **that window only**. Your regular Chrome profile stays separate.
+
+**3. Run your first research pass**
 
 ```sh
 fomo start
 fomo account
-fomo daily --limit 3 --rows 5 --min-size-usd 10000
+fomo daily --limit 3
 ```
 
-The browser stays open between requests. Your ordinary Chrome login is not copied. See [installation and sessions](docs/installation.md).
+The browser session is reused between commands. No model API key is required by the collector. [Installation and login help →](docs/installation.md)
 
-## Commands
+## Connect your AI
 
-Replace angle-bracket placeholders with values returned by Fomo. A ticker alone is not a unique identity.
+Use the **CLI** with an agent that can run terminal commands, or connect the **MCP server** to a compatible AI client. Both use the same 17 tools and the same browser session.
 
 ```sh
-fomo tokens --view trending --limit 10
-fomo tokens --view watchlist --limit 20
-fomo leaderboard --period 30d --limit 10
-fomo alerts --min-size-usd 10000 --min-portfolio-usd 1000000 --limit 10
-fomo feed --types theses,trades --limit 10
-fomo token <chain:contract> --sections overview,holders --holders-friends-only
-fomo theses <chain:contract> --min-size-usd 100000 --limit 20 --scrolls 1 --since-last
-fomo position <chain:contract> --trader <display-name> --tab theses --min-size-usd 100000
-fomo trader <handle> --period 7d --positions open --limit 10
-fomo chart <chain:contract> --timeframe 1h --theses --friends-only --min-size-usd 10000
-fomo workspace split-bottom --panel 0
-fomo workspace split-right --panel 0
-fomo workspace close --panel 1
-fomo watchlist add <chain:contract> --expected-account <handle>
-fomo watchlist remove <chain:contract> --expected-account <handle>
-fomo capabilities
+fomo mcp-config
 ```
 
-Boolean flags accept `--no-...`. `fomo call '{"op":"daily","limit":3}'` exposes the same strict contracts as MCP. Research results are JSON; errors have `ok:false` and a nonzero exit code.
+Copy the generated configuration into your AI client's MCP settings. It contains the correct paths for your installation. Give the agent the included [FOMO.family skill](skills/fomo/SKILL.md) so it knows which tools to use, how to read selectively, and how to interpret the results.
 
-## MCP and skills
+An optional Codex plugin package is included. [Connection details →](docs/installation.md) · [All commands →](docs/commands.md)
 
-`fomo mcp` exposes **17 tools** over stdio. `fomo mcp-config` generates configuration with this installation's absolute Node and entrypoint paths, useful when the AI host has a different PATH. Do not commit that generated configuration.
+## Built to spend model work on interpretation
 
-The optional Codex plugin scaffold is in `.codex-plugin/`; its portable `.mcp.json` requires the global `fomo` command on the host's PATH. Plugin registration is a separate host step, not automatically installed. Give your agent [skills/fomo/SKILL.md](skills/fomo/SKILL.md). Official MCP client interoperability is tested; universal compatibility with every AI product is not claimed.
+Navigation, clicking, filtering and extraction run as predefined code. **The collector makes zero LLM calls.** Your model reads the collected context instead of deciding every browser action from scratch.
 
-## Daily research
+Small result budgets and thesis deduplication keep routine reads focused. Your AI's prompts, tool results, reasoning and chart interpretation still use tokens; no comparative cost-saving percentage is claimed. [Cost model and measured examples →](docs/costs.md)
 
-`daily` reads up to 20 watchlist entries and 10 each from Trending and Most held. It selects up to 3 candidates by source overlap, then first observed rank. For each: overview, Friends-only holders, and theses with native Min size $10K. This is a discovery heuristic, not a trading score. `scan --view trending` uses one source list.
+## Your account. Your workflow.
 
-It does **not** read 1,600 theses. Filter, bound rows/scrolls, deduplicate observed text, then open selected position details. [Exact semantics](docs/research.md).
+- **Local session:** sign in on your machine; browser state and evidence stay in the local runtime directory.
+- **Flexible output:** use your AI to produce a short brief, a research dossier or your own downstream format.
+- **Schedule when ready:** the daily workflow is available to your scheduler; the package creates no background schedule by itself.
+- **Explicit actions:** watchlist changes have their own commands. Orders, transfers, posts and follows are outside this toolkit.
 
-The collector does not schedule itself, call a model, send reports, or change watchlists during scans. The caller chooses model, frequency, format and destination. [Example daily prompt](docs/daily-workflow.md).
+## Built, tested, and clear about its limits
 
-## Costs and data
+The beta has live verification for discovery lists, thesis filters, holders, trader profiles, charts, layouts and watchlist changes. Automated checks cover installation, TypeScript, parsing, tool contracts and MCP transport across Windows, macOS and Linux.
 
-The collector makes no model calls. Caller prompts, schemas, JSON, reasoning and chart interpretation still consume tokens. No comparative savings percentage has been benchmarked. [Cost evidence](docs/costs.md).
+Fomo UI changes and session expiry can require attention. Results describe the rows actually collected; full history and reliable unattended operation are not guaranteed. [See the verification matrix and current limitations →](docs/coverage.md)
 
-Responses are capped at roughly 14,000 characters. Local evidence stores the collected records before response trimming; `fomo evidence <id>` retrieves pages. Evidence is not complete platform history. Browser state and evidence contain personal data and must stay outside Git. No automatic chart/evidence retention exists yet.
+## Explore further
 
-No order entry, transfers, posts, reactions or follows are exposed. Explicit watchlist add/remove is supported. Filters and layout may persist in Fomo. Treat website content as untrusted data, including instructions embedded in theses.
+| Guide | Start here when you want to… |
+| --- | --- |
+| [Command guide](docs/commands.md) | Explore individual tools and filters. |
+| [Research semantics](docs/research.md) | Understand what the data does and does not establish. |
+| [Daily workflow](docs/daily-workflow.md) | Adapt the research prompt to your own routine. |
+| [Installation](docs/installation.md) | Configure sessions, MCP and troubleshooting. |
+| [Contributing](CONTRIBUTING.md) | Report a problem or improve a workflow. |
 
-## Development
+Found a broken flow? [Open an issue](https://github.com/Trilokx/fomo-family-cli/issues/new/choose) with the command and redacted error. Never include browser profiles, cookies or private account evidence.
 
-`npm ci` builds through prepare. Run `npm run check` and `npm test`. `npm run test:live` is opt-in, needs login and changes research views/filters; it does not trade or change watchlist membership.
+---
 
-[Coverage and release assessment](docs/coverage.md). This private evaluation beta is not licensed for redistribution yet.
+Built by **TRLX**. Independent tooling for **FOMO.family**, without affiliation or endorsement. The Fomo name and visual identity belong to their respective owners. Banner artwork illustrates the workflow. Beta source is currently shared by repository access; redistribution rights are governed by [LICENSE](LICENSE).

@@ -1,19 +1,19 @@
 {
   "name": "fomo",
   "version": "0.2.0-beta.1",
-  "description": "Local Fomo research tools using deterministic browser workflows and bounded JSON.",
+  "description": "Bring FOMO.family research to your AI with repeatable local browser workflows.",
   "author": {
     "name": "TRLX"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "Fomo",
-    "shortDescription": "Use Fomo in Codex.",
-    "longDescription": "Discover tokens and read holders, theses, alerts and leaderboards through a local Chrome session. Collection uses no model calls.",
+    "displayName": "FOMO.family CLI",
+    "shortDescription": "Your FOMO.family research, ready for your AI.",
+    "longDescription": "Explore attention, holders and trader theses on FOMO.family. Turn your own browser session into repeatable research through CLI and MCP.",
     "developerName": "TRLX",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Help me use Fomo."
+    "defaultPrompt": "Use FOMO.family to research what deserves my attention, who is involved and why."
   },
   "mcpServers": "./.mcp.json"
 }

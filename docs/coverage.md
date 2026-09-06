@@ -1,4 +1,4 @@
-# Coverage and release assessment
+# FOMO.family CLI — verified coverage
 
 Verified against the live Windows Fomo UI on September 6, 2026. These are bounded snapshots on one authenticated account, not exhaustive coverage or availability guarantees.
 
@@ -22,10 +22,10 @@ Verified against the live Windows Fomo UI on September 6, 2026. These are bounde
 
 ## Release decision
 
-Suitable for a **private evaluation beta**. Not yet defensibly 95/100 for public, unattended distribution. Assigning that score from a successful demo would conceal missing evidence.
+**Beta.** Core research workflows have live verification. Automated checks validate the package and shared CLI/MCP contracts across three operating systems. Unattended operation requires additional verification before it can be treated as dependable monitoring.
 
 Public release gates: logged-in smoke on a second machine; several scheduled runs including session expiry/failure behavior; browser regression fixtures; complete contract-vs-live matrix including empty states; documented state retention; chosen distribution license and support expectations; installation tests in target AI hosts.
 
-GitHub CI completed successfully on Windows, macOS and Linux for commit 09084dde92656979bc9af0dafe9cb020040cd31c: clean dependency installation, build, typecheck, 18 tests and production dependency audit. A separate Mac Mini installation also passed build/check and all 18 tests using Node 25.9.0. Its dedicated manual Chrome login is still awaiting the account owner; no authenticated Mac daily run or active schedule is claimed. In the managed installer session, Git metadata writes were blocked; the exact commit's files were installed from an authenticated temporary clone instead. Standard terminal clone installation is documented, but that sandbox constraint remains a deployment consideration.
+GitHub CI completed successfully on Windows, macOS and Linux for code commit 09084dde92656979bc9af0dafe9cb020040cd31c: clean dependency installation, build, typecheck, 18 tests and production dependency audit. A separate macOS installation also passed build/check and all 18 tests using Node 25.9.0. Cross-platform package checks do not establish authenticated browser or unattended reliability on every operating system. [Current CI runs](https://github.com/Trilokx/fomo-family-cli/actions/workflows/check.yml).
 
 This package covers the requested core research workflows. It does not claim every Fomo screen control: notification/audio settings, follow management, search UI, chart indicators/drawings and account/trade controls are not exposed. Trading, transfers and posting are outside this beta's scope. X enrichment is deferred.

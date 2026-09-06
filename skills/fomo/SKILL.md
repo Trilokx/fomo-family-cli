@@ -1,6 +1,6 @@
 ---
 name: fomo
-description: Research Fomo using deterministic CLI or MCP for discovery lists, holders, filtered theses, position context, charts and verified watchlist changes. Use for bounded Fomo screening through the user's own logged-in browser.
+description: Research FOMO.family using deterministic CLI or MCP for discovery lists, holders, filtered theses, position context, charts and verified watchlist changes. Use for bounded Fomo screening through the user's own logged-in browser.
 ---
 
 Use fomo_capabilities when coverage is unknown. CLI equivalents: fomo capabilities and fomo --help. The 17 tools share one Chrome daemon. Prefer one fomo_daily call with 3 candidates and 5 rows, or fomo_scan for one list. Collection makes zero LLM calls; your interpretation still costs tokens.

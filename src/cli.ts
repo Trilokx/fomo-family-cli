@@ -6,7 +6,7 @@ import {capabilityMap,fail,FomoError} from './contracts.js';
 import {stateDir} from './store.js';
 import {fileURLToPath} from 'node:url';
 
-const help=`Fomo 0.2 beta — bounded browser research tools (no model calls)
+const help=`FOMO.family CLI 0.2 beta — browser research tools (no model calls)
   fomo login                         Open dedicated browser to sign in
   fomo start                         Start dedicated Chrome browser
   fomo status | stop | capabilities | doctor

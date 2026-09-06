@@ -1,9 +1,11 @@
 # Draft — not posted
 
-I'm building a small Fomo CLI + MCP adapter for AI agents.
+Your FOMO.family research, ready for your AI.
 
-Instead of asking a model to decide every browser click, predefined workflows collect trending tokens, watchlists, holders and filtered theses into bounded JSON. The collector itself makes zero LLM calls.
+FOMO.family CLI turns your own browser session into repeatable research: where attention is moving, which traders are involved, and the thesis behind their positions.
 
-One useful example: filter theses at Fomo's $100K minimum size and only return newly observed text on the next run.
+One command collects a focused sample. Your AI turns it into a brief. CLI + MCP, filtered theses, watchlist controls, and zero model calls inside the collector.
 
-It's an early private beta. Browser automation still needs maintenance, and this isn't an official Fomo API or a trading bot. I'm testing portability and unattended daily research before a wider release.
+Now in beta. Independent tooling, with verified coverage and limitations documented. Your model still uses tokens to interpret the results.
+
+Repository: https://github.com/Trilokx/fomo-family-cli (access currently required).

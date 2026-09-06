@@ -3,7 +3,7 @@
   "version": "0.2.0-beta.1",
   "private": true,
   "type": "module",
-  "description": "Bounded browser tools for Fomo, shared by CLI and MCP",
+  "description": "Bring FOMO.family research to your AI: discover coins, read trader theses and manage watchlists through CLI or MCP.",
   "bin": {
     "fomo": "bin/fomo.mjs"
   },
@@ -35,11 +35,17 @@
     "README.md",
     "LICENSE",
     ".codex-plugin/",
-    ".mcp.json"
+    ".mcp.json",
+    "assets/",
+    "CONTRIBUTING.md"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Trilokx/fomo-cli.git"
+    "url": "git+https://github.com/Trilokx/fomo-family-cli.git"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/Trilokx/fomo-family-cli#readme",
+  "bugs": {
+    "url": "https://github.com/Trilokx/fomo-family-cli/issues"
+  }
 }
