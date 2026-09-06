@@ -20,4 +20,4 @@ Keep changes focused. CLI and MCP use the same contracts and adapter. Preserve e
 
 `npm run test:live` is opt-in and requires your own logged-in Fomo browser. It changes research views and filters. Keep its evidence outside Git. Document what was actually verified, including incomplete and failed cases.
 
-For product copy and repository presentation, follow the [TRLX README format](docs/product-readme-template.md). Distribution and contribution permissions remain subject to [LICENSE](LICENSE).
+For product copy and repository presentation, follow the [TRLX README format](docs/product-readme-template.md). Contributions to this project are provided under the [MIT License](LICENSE).

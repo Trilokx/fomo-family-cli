@@ -24,7 +24,7 @@ Verified against the live Windows Fomo UI on September 6, 2026. These are bounde
 
 **Beta.** Core research workflows have live verification. Automated checks validate the package and shared CLI/MCP contracts across three operating systems. Unattended operation requires additional verification before it can be treated as dependable monitoring.
 
-Public release gates: logged-in smoke on a second machine; several scheduled runs including session expiry/failure behavior; browser regression fixtures; complete contract-vs-live matrix including empty states; documented state retention; chosen distribution license and support expectations; installation tests in target AI hosts.
+Stable-release gates: logged-in smoke on a second machine; several scheduled runs including session expiry/failure behavior; browser regression fixtures; complete contract-vs-live matrix including empty states; documented state retention; installation tests in target AI hosts. This public beta is available under the MIT License, with feedback through GitHub Issues.
 
 GitHub CI completed successfully on Windows, macOS and Linux for code commit 09084dde92656979bc9af0dafe9cb020040cd31c: clean dependency installation, build, typecheck, 18 tests and production dependency audit. A separate macOS installation also passed build/check and all 18 tests using Node 25.9.0. Cross-platform package checks do not establish authenticated browser or unattended reliability on every operating system. [Current CI runs](https://github.com/Trilokx/fomo-family-cli/actions/workflows/check.yml).
 

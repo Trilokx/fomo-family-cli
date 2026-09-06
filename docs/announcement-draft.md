@@ -1,11 +1,12 @@
-# Draft — not posted
+# Public beta announcement
 
-Your FOMO.family research, ready for your AI.
+Suggested X post (publication status is tracked separately):
 
-FOMO.family CLI turns your own browser session into repeatable research: where attention is moving, which traders are involved, and the thesis behind their positions.
+I built FOMO.family CLI: trending coins, holders, trader theses and watchlists for your AI via CLI + MCP.
 
-One command collects a focused sample. Your AI turns it into a brief. CLI + MCP, filtered theses, watchlist controls, and zero model calls inside the collector.
+Zero LLM calls in the collector. Your AI interprets the results.
 
-Now in beta. Independent tooling, with verified coverage and limitations documented. Your model still uses tokens to interpret the results.
+Open-source beta (MIT). Independent project.
+https://github.com/Trilokx/fomo-family-cli
 
-Repository: https://github.com/Trilokx/fomo-family-cli (access currently required).
+Attach [the product banner](../assets/fomo-family-cli-banner.png).

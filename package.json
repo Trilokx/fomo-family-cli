@@ -43,7 +43,7 @@
     "type": "git",
     "url": "git+https://github.com/Trilokx/fomo-family-cli.git"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "homepage": "https://github.com/Trilokx/fomo-family-cli#readme",
   "bugs": {
     "url": "https://github.com/Trilokx/fomo-family-cli/issues"

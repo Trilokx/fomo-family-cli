@@ -132,4 +132,4 @@ Found a broken flow? [Open an issue](https://github.com/Trilokx/fomo-family-cli/
 
 ---
 
-Built by **TRLX**. Independent tooling for **FOMO.family**, without affiliation or endorsement. The Fomo name and visual identity belong to their respective owners. Banner artwork illustrates the workflow. Beta source is currently shared by repository access; redistribution rights are governed by [LICENSE](LICENSE).
+Built by **TRLX**. Open-source beta under the [MIT License](LICENSE). Independent tooling for **FOMO.family**, without affiliation or endorsement. The Fomo name and visual identity belong to their respective owners; the software license grants no rights to third-party trademarks or branding. Banner artwork illustrates the workflow.
